@@ -265,24 +265,36 @@ input[type=button] {
 
 @basic-text-color: #fff;
 @basic-bg-color: #111111;
-@basic-font-family: 'Space Mono';
+@basic-font-family: 'AlphaRope';
 @window-padding-LR: 2.77778vw;
 @window-padding-TB: 2.43056vw;
-@min1v1: ~"(min-aspect-ratio: 1 / 1)"; //页面宽高比小于1比1(竖屏设备)
-@max1v1: ~"(max-aspect-ratio: 1 / 1)"; //页面宽高比大于1比1(宽屏设备)
+@min1v1: ~"(min-aspect-ratio: 1 / 1)"; //页面宽高比大于1比1(宽屏设备)
+@max1v1: ~"(max-aspect-ratio: 1 / 1)"; //页面宽高比小于1比1(竖屏设备)
+@maxH700: ~"(max-geight:700px)";
 /*^^^^基础变量^^^^*/
 
 @keyframes typing {
     from {
-        width: 7ch;
+        width: 8ch;
     }
 }
 
 /*^^^^动画^^^^*/
 
+.Ds_show {
+    transform: translateZ(0);
+    will-change: transform; //提�前通知浏览器元素会变化
+    display: none;
+}
+
+.Ds_show.active {
+    display: block;
+}
+
 .Ds_title {
     display: inline-block;
-    font: bold @basic-font-family;
+    font-family: @basic-font-family;
+    font-weight: bold;
     text-align: left;
     color: @basic-text-color;
     line-height: 1;
@@ -290,17 +302,18 @@ input[type=button] {
         font-weight: bold;
     }
     @media @min1v1 {
-        font-size: 6.81944vw;
-        max-width: 47.8725vw;
+        font-size: 6.8vw;
+        max-width: 47.9vw;
     }
     @media @max1v1 {
-        font-size: 13.19444vw;
-        max-width: 197.91667vw;
+        font-size: 13.2vw;
+        max-width: 197.9vw;
     }
 }
 
 .Ds_describe {
-    font: normal @basic-font-family;
+    font-family: @basic-font-family;
+    font-weight: normal;
     line-height: 1.5;
     text-align: left;
     color: @basic-text-color;
@@ -311,12 +324,12 @@ input[type=button] {
         font-weight: normal;
     }
     @media @min1v1 {
-        font-size: 3.33333vw;
+        font-size: 3.3vw;
         max-width: 50vw;
     }
     @media @max1v1 {
-        font-size: 5.55556vw;
-        max-width: 83.33333vw;
+        font-size: 5.0vw;
+        max-width: 83.3vw;
     }
 }
 
@@ -387,24 +400,52 @@ body {
     height: 500px;
 }
 
-.Ds_page_one {}
+.Ds_page_one {
+    .Ds_text_top {
+        position: fixed;
+        top: 31%;
+        padding: 0 2.8vw;
+        @media @maxH700 {
+            top: 20%;
+        }
+    }
+    .Ds_line {
+        min-width: 2px;
+        width: 0.13vw;
+        background-color: @basic-text-color;
+        overflow: hidden;
+        position: absolute;
+        @media @max1v1 {
+            top: 9.2vw;
+            height: 13.2vw;
+            right: 5vw;
+            margin: 3.9vw 0 0 10.6vw
+        }
+        @media @min1v1 {
+            top: 5.4vw;
+            right: 4vw;
+            height: 6.8vw;
+            margin: 2.0vw 0 0 5.5vw;
+        }
+    }
+}
 
 #Ds_watch_more {
     transform: rotate(-90deg);
     z-index: 332;
-    position: fixed;
+    position: absolute;
     margin: 0 auto;
     bottom: 1vw;
-    left: 50vw;
+    right: 50vw;
     &:after {
-        content: "(° Д° ))))) =3 =3 =3 =3";
-        width: 17ch;
+        content: "(° Д° )))) =3 =3 =3 =3";
+        width: 23ch;
         white-space: nowrap;
         overflow: hidden;
         color: @basic-text-color;
         opacity: .8;
-        animation: typing 4s steps(4) infinite;
-        font: bold 8px @basic-font-family;
+        animation: typing 4s steps(5) infinite;
+        font: bold 10px @basic-font-family;
         position: absolute;
     }
 }

@@ -231,13 +231,22 @@ input[type=button] {
 /*^^^^基础变量^^^^*/
 @keyframes typing {
   from {
-    width: 7ch;
+    width: 8ch;
   }
 }
 /*^^^^动画^^^^*/
+.Ds_show {
+  transform: translateZ(0);
+  will-change: transform;
+  display: none;
+}
+.Ds_show.active {
+  display: block;
+}
 .Ds_title {
   display: inline-block;
-  font: bold 'Space Mono';
+  font-family: 'AlphaRope';
+  font-weight: bold;
   text-align: left;
   color: #fff;
   line-height: 1;
@@ -247,18 +256,19 @@ input[type=button] {
 }
 @media (min-aspect-ratio: 1 / 1) {
   .Ds_title {
-    font-size: 6.81944vw;
-    max-width: 47.8725vw;
+    font-size: 6.8vw;
+    max-width: 47.9vw;
   }
 }
 @media (max-aspect-ratio: 1 / 1) {
   .Ds_title {
-    font-size: 13.19444vw;
-    max-width: 197.91667vw;
+    font-size: 13.2vw;
+    max-width: 197.9vw;
   }
 }
 .Ds_describe {
-  font: normal 'Space Mono';
+  font-family: 'AlphaRope';
+  font-weight: normal;
   line-height: 1.5;
   text-align: left;
   color: #fff;
@@ -271,20 +281,20 @@ input[type=button] {
 }
 @media (min-aspect-ratio: 1 / 1) {
   .Ds_describe {
-    font-size: 3.33333vw;
+    font-size: 3.3vw;
     max-width: 50vw;
   }
 }
 @media (max-aspect-ratio: 1 / 1) {
   .Ds_describe {
-    font-size: 5.55556vw;
-    max-width: 83.33333vw;
+    font-size: 5.0vw;
+    max-width: 83.3vw;
   }
 }
 /*^^^^公共样式^^^^*/
 body {
   background-color: #111111;
-  font-family: 'Space Mono';
+  font-family: 'AlphaRope';
 }
 .Ds_nav {
   position: fixed;
@@ -294,7 +304,7 @@ body {
   position: fixed;
   top: 2.43056vw;
   left: 2.77778vw;
-  font: bold 20px/1.25 'Space Mono';
+  font: bold 20px/1.25 'AlphaRope';
   text-align: center;
   text-decoration: none;
   color: #fff;
@@ -326,7 +336,7 @@ body {
   position: fixed;
   top: 2.43056vw;
   right: 2.77778vw;
-  font: bold 16px 'Space Mono';
+  font: bold 16px 'AlphaRope';
   color: #fff;
   text-align: right;
   cursor: pointer;
@@ -339,23 +349,56 @@ body {
   width: 100%;
   height: 500px;
 }
+.Ds_page_one .Ds_text_top {
+  position: fixed;
+  top: 31%;
+  padding: 0 2.8vw;
+}
+@media (max-geight:700px) {
+  .Ds_page_one .Ds_text_top {
+    top: 20%;
+  }
+}
+.Ds_page_one .Ds_line {
+  min-width: 2px;
+  width: 0.13vw;
+  background-color: #fff;
+  overflow: hidden;
+  position: absolute;
+}
+@media (max-aspect-ratio: 1 / 1) {
+  .Ds_page_one .Ds_line {
+    top: 9.2vw;
+    height: 13.2vw;
+    right: 5vw;
+    margin: 3.9vw 0 0 10.6vw;
+  }
+}
+@media (min-aspect-ratio: 1 / 1) {
+  .Ds_page_one .Ds_line {
+    top: 5.4vw;
+    right: 4vw;
+    height: 6.8vw;
+    margin: 2.0vw 0 0 5.5vw;
+  }
+}
 #Ds_watch_more {
   transform: rotate(-90deg);
   z-index: 332;
-  position: fixed;
+  position: absolute;
   margin: 0 auto;
   bottom: 1vw;
-  left: 50vw;
+  right: 50vw;
 }
 #Ds_watch_more:after {
-  content: "(° Д° ))))) =3 =3 =3 =3";
-  width: 17ch;
+  content: "(° Д° )))) =3 =3 =3 =3";
+  width: 23ch;
   white-space: nowrap;
   overflow: hidden;
   color: #fff;
   opacity: .8;
-  animation: typing 4s steps(4) infinite;
-  font: bold 8px 'Space Mono';
+  animation: typing 4s steps(5) infinite;
+  font: bold 10px 'AlphaRope';
   position: absolute;
 }
 /*^^^^page-1^^^^*/
