@@ -1,0 +1,412 @@
+/* code by Dawninshadow  2018.4.21 */
+
+html,
+body,
+body div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video,
+details,
+summary {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    background: transparent
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+nav,
+section,
+details,
+summary {
+    display: block
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+img,
+object,
+embed {
+    max-width: 100%;
+    height: auto
+}
+
+html {
+    overflow-y: scroll
+}
+
+ul {
+    list-style: none
+}
+
+blockquote,
+q {
+    quotes: none
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent
+}
+
+del {
+    text-decoration: line-through
+}
+
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted #000;
+    cursor: help
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+th {
+    font-weight: bold;
+    vertical-align: bottom
+}
+
+td {
+    font-weight: normal;
+    vertical-align: top
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0
+}
+
+input,
+select {
+    vertical-align: middle
+}
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: pre-line;
+    word-wrap: break-word
+}
+
+input[type="radio"] {
+    vertical-align: text-bottom
+}
+
+input[type="checkbox"] {
+    vertical-align: bottom
+}
+
+.ie7 input[type="checkbox"] {
+    vertical-align: baseline
+}
+
+.ie6 input {
+    vertical-align: text-bottom
+}
+
+select,
+input,
+textarea {
+    font: 99% sans-serif
+}
+
+table {
+    font-size: inherit;
+    font: 100%
+}
+
+small {
+    font-size: 85%
+}
+
+strong {
+    font-weight: bold
+}
+
+td,
+td img {
+    vertical-align: top
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative
+}
+
+sup {
+    top: -0.5em
+}
+
+sub {
+    bottom: -0.25em
+}
+
+pre,
+code,
+kbd,
+samp {
+    font-family: monospace, sans-serif
+}
+
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+    cursor: pointer
+}
+
+button,
+input,
+select,
+textarea {
+    margin: 0
+}
+
+button,
+input[type=button] {
+    width: auto;
+    overflow: visible
+}
+
+/*^^^^基础样式清除^^^^*/
+
+@basic-text-color: #fff;
+@basic-bg-color: #111111;
+@basic-font-family: 'Space Mono';
+@window-padding-LR: 2.77778vw;
+@window-padding-TB: 2.43056vw;
+@min1v1: ~"(min-aspect-ratio: 1 / 1)"; //页面宽高比小于1比1(竖屏设备)
+@max1v1: ~"(max-aspect-ratio: 1 / 1)"; //页面宽高比大于1比1(宽屏设备)
+/*^^^^基础变量^^^^*/
+
+@keyframes typing {
+    from {
+        width: 7ch;
+    }
+}
+
+/*^^^^动画^^^^*/
+
+.Ds_title {
+    display: inline-block;
+    font: bold @basic-font-family;
+    text-align: left;
+    color: @basic-text-color;
+    line-height: 1;
+    span {
+        font-weight: bold;
+    }
+    @media @min1v1 {
+        font-size: 6.81944vw;
+        max-width: 47.8725vw;
+    }
+    @media @max1v1 {
+        font-size: 13.19444vw;
+        max-width: 197.91667vw;
+    }
+}
+
+.Ds_describe {
+    font: normal @basic-font-family;
+    line-height: 1.5;
+    text-align: left;
+    color: @basic-text-color;
+    margin-top: 27px;
+    font-size: 24px;
+    max-width: 360px;
+    span {
+        font-weight: normal;
+    }
+    @media @min1v1 {
+        font-size: 3.33333vw;
+        max-width: 50vw;
+    }
+    @media @max1v1 {
+        font-size: 5.55556vw;
+        max-width: 83.33333vw;
+    }
+}
+
+/*^^^^公共样式^^^^*/
+
+body {
+    background-color: @basic-bg-color;
+    font-family: @basic-font-family;
+}
+
+.Ds_nav {
+    position: fixed;
+    z-index: 233;
+}
+
+.Ds_face {
+    position: fixed;
+    top: @window-padding-TB;
+    left: @window-padding-LR;
+    font: bold 20px/1.25 @basic-font-family;
+    text-align: center;
+    text-decoration: none;
+    color: @basic-text-color;
+}
+
+.Ds_face>span {
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+}
+
+.Ds_menu {
+    position: fixed;
+    z-index: 1;
+    bottom: @window-padding-TB;
+    left: @window-padding-LR;
+    a {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.88;
+        text-align: left;
+        color: @basic-text-color;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        &:hover {
+            border-bottom: 2px solid #fff;
+        }
+    }
+}
+
+.Ds_special {
+    position: fixed;
+    top: @window-padding-TB;
+    right: @window-padding-LR;
+    font: bold 16px @basic-font-family;
+    color: @basic-text-color;
+    text-align: right;
+    cursor: pointer;
+    &:hover {
+        border-bottom: 2px solid #fff;
+    }
+}
+
+/*^^^^nav^^^^*/
+
+.Ds_page_one {
+    width: 100%;
+    height: 500px;
+}
+
+.Ds_page_one {}
+
+#Ds_watch_more {
+    transform: rotate(-90deg);
+    z-index: 332;
+    position: fixed;
+    margin: 0 auto;
+    bottom: 1vw;
+    left: 50vw;
+    &:after {
+        content: "(° Д° ))))) =3 =3 =3 =3";
+        width: 17ch;
+        white-space: nowrap;
+        overflow: hidden;
+        color: @basic-text-color;
+        opacity: .8;
+        animation: typing 4s steps(4) infinite;
+        font: bold 8px @basic-font-family;
+        position: absolute;
+    }
+}
+
+/*^^^^page-1^^^^*/
