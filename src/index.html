@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body scrollamount="2">
     <nav class="Ds_nav">
         <a href="#" class="Ds_face">_(:<span>ｪ</span> 」∠)_</a>
         <ul class="Ds_menu">
@@ -35,17 +35,18 @@
         </div>
     </nav>
     <div class="Ds_page_one">
-        <div class="Ds_text_top Ds_show active">
-            <div class="Ds_title">
-                Hello!&nbsp;&nbsp; I'm&nbsp;TOKdawn
+        <div class="Ds_text_top Ds_show active" id="DS_div_one">
+            <div class="Ds_title" id="DS_title_one">
+                <!-- Hello!&nbsp;&nbsp; I'm&nbsp;TOKdawn -->
+                <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span><span>!</span><br><span>I</span><span>'</span><span>m</span><span>&nbsp</span><span>T</span><span>O</span><span>K</span><span>d</span><span>o</span><span>w</span><span>n</span>
             </div>
-            <div class="Ds_describe">
-                情之所钟,正在吾辈
+            <div class="Ds_describe" id="DS_describe_one">
+                <span>情</span><span>之</span><span>所</span><span>钟</span><span>,</span><span>正</span><span>在</span><span>吾</span><span>辈</span>
             </div>
-            <div class="Ds_line">
+            <div class="Ds_line" id="DS_line">
 
             </div>
-            <div id="Ds_watch_more" id=""> &nbsp</div>
+            <div id="Ds_watch_more"> &nbsp</div>
         </div>
 
     </div>
@@ -55,12 +56,28 @@
     <div class="Ds_page_thr">
 
     </div>
+
+
     <div id="DS_fill" style="width: 100%">
 
     </div>
     <script src="./js/jq.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/scrollSpeed.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#DS_fill').height($(window).height());
+            $(window).resize(function() { //当浏览器大小变化时
+                $('#DS_fill').height($(window).height());
+                //填充末尾div,以保持scrollTop在各种高度浏览器间恒定
+            });
+            // $('body').delay(1000).fadeOut(400);
+            $.scrollSpeed(9, 80);
+            var text = $('#DS_title_one').text().split('');
 
+
+        });
+    </script>
 </body>
 
 </html>

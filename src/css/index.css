@@ -370,15 +370,15 @@ body {
   .Ds_page_one .Ds_line {
     top: 9.2vw;
     height: 13.2vw;
-    right: 5vw;
+    right: -4vw;
     margin: 3.9vw 0 0 10.6vw;
   }
 }
 @media (min-aspect-ratio: 1 / 1) {
   .Ds_page_one .Ds_line {
     top: 5.4vw;
-    right: 4vw;
     height: 6.8vw;
+    right: 0vw;
     margin: 2.0vw 0 0 5.5vw;
   }
 }
@@ -391,12 +391,12 @@ body {
 }
 @media (max-aspect-ratio: 1 / 1) {
   #Ds_watch_more {
-    right: 5vw;
+    right: -4vw;
   }
 }
 @media (min-aspect-ratio: 1 / 1) {
   #Ds_watch_more {
-    right: 4vw;
+    right: 0vw;
   }
 }
 #Ds_watch_more:after {
