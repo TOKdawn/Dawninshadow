@@ -231,7 +231,7 @@ input[type=button] {
 /*^^^^基础变量^^^^*/
 @keyframes typing {
   from {
-    width: 8ch;
+    width: 10ch;
   }
 }
 /*^^^^动画^^^^*/
@@ -245,7 +245,7 @@ input[type=button] {
 }
 .Ds_title {
   display: inline-block;
-  font-family: 'AlphaRope';
+  font-family: monospace, monospace;
   font-weight: bold;
   text-align: left;
   color: #fff;
@@ -267,7 +267,7 @@ input[type=button] {
   }
 }
 .Ds_describe {
-  font-family: 'AlphaRope';
+  font-family: monospace, monospace;
   font-weight: normal;
   line-height: 1.5;
   text-align: left;
@@ -294,7 +294,7 @@ input[type=button] {
 /*^^^^公共样式^^^^*/
 body {
   background-color: #111111;
-  font-family: 'AlphaRope';
+  font-family: monospace, monospace;
 }
 .Ds_nav {
   position: fixed;
@@ -304,7 +304,7 @@ body {
   position: fixed;
   top: 2.43056vw;
   left: 2.77778vw;
-  font: bold 20px/1.25 'AlphaRope';
+  font: bold 20px/1.25 monospace, monospace;
   text-align: center;
   text-decoration: none;
   color: #fff;
@@ -336,7 +336,7 @@ body {
   position: fixed;
   top: 2.43056vw;
   right: 2.77778vw;
-  font: bold 16px 'AlphaRope';
+  font: bold 16px monospace, monospace;
   color: #fff;
   text-align: right;
   cursor: pointer;
@@ -347,11 +347,11 @@ body {
 /*^^^^nav^^^^*/
 .Ds_page_one {
   width: 100%;
-  height: 500px;
+  height: 1000px;
 }
 .Ds_page_one .Ds_text_top {
   position: fixed;
-  top: 31%;
+  top: 26%;
   padding: 0 2.8vw;
 }
 @media (max-geight:700px) {
@@ -365,12 +365,12 @@ body {
   background-color: #fff;
   overflow: hidden;
   position: absolute;
+  right: -3vw;
 }
 @media (max-aspect-ratio: 1 / 1) {
   .Ds_page_one .Ds_line {
     top: 9.2vw;
     height: 13.2vw;
-    right: -4vw;
     margin: 3.9vw 0 0 10.6vw;
   }
 }
@@ -378,7 +378,6 @@ body {
   .Ds_page_one .Ds_line {
     top: 5.4vw;
     height: 6.8vw;
-    right: 0vw;
     margin: 2.0vw 0 0 5.5vw;
   }
 }
@@ -388,26 +387,17 @@ body {
   position: absolute;
   margin: 0 auto;
   top: 65vh;
-}
-@media (max-aspect-ratio: 1 / 1) {
-  #Ds_watch_more {
-    right: -4vw;
-  }
-}
-@media (min-aspect-ratio: 1 / 1) {
-  #Ds_watch_more {
-    right: 0vw;
-  }
+  right: -3vw;
 }
 #Ds_watch_more:after {
   content: "(° Д° )))) =3 =3 =3 =3";
-  width: 23ch;
+  width: 25ch;
   white-space: nowrap;
   overflow: hidden;
   color: #fff;
   opacity: .8;
   animation: typing 4s steps(5) infinite;
-  font: bold 12px 'AlphaRope';
+  font: bold 12px monospace, monospace;
   position: absolute;
 }
 /*^^^^page-1^^^^*/

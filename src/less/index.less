@@ -265,7 +265,8 @@ input[type=button] {
 
 @basic-text-color: #fff;
 @basic-bg-color: #111111;
-@basic-font-family: 'AlphaRope';
+@basic-font-family: monospace,
+monospace;
 @window-padding-LR: 2.77778vw;
 @window-padding-TB: 2.43056vw;
 @min1v1: ~"(min-aspect-ratio: 1 / 1)"; //页面宽高比大于1比1(宽屏设备)
@@ -275,7 +276,7 @@ input[type=button] {
 
 @keyframes typing {
     from {
-        width: 8ch;
+        width: 10ch;
     }
 }
 
@@ -397,13 +398,13 @@ body {
 
 .Ds_page_one {
     width: 100%;
-    height: 500px;
+    height: 1000px;
 }
 
 .Ds_page_one {
     .Ds_text_top {
         position: fixed;
-        top: 31%;
+        top: 26%;
         padding: 0 2.8vw;
         @media @maxH700 {
             top: 20%;
@@ -415,16 +416,15 @@ body {
         background-color: @basic-text-color;
         overflow: hidden;
         position: absolute;
+        right: -3vw;
         @media @max1v1 {
             top: 9.2vw;
             height: 13.2vw;
-            right: -4vw;
             margin: 3.9vw 0 0 10.6vw
         }
         @media @min1v1 {
             top: 5.4vw;
             height: 6.8vw;
-            right: 0vw;
             margin: 2.0vw 0 0 5.5vw;
         }
     }
@@ -436,15 +436,10 @@ body {
     position: absolute;
     margin: 0 auto;
     top: 65vh;
-    @media @max1v1 {
-        right: -4vw;
-    }
-    @media @min1v1 {
-        right: 0vw;
-    }
+    right: -3vw;
     &:after {
         content: "(° Д° )))) =3 =3 =3 =3";
-        width: 23ch;
+        width: 25ch;
         white-space: nowrap;
         overflow: hidden;
         color: @basic-text-color;
